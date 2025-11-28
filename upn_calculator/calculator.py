@@ -69,9 +69,11 @@ class UPNCalculator:
                 self.stack.append(float(token))
             elif is_operator(token):
                 if len(self.stack) < 2:
-                    raise InsufficientOperandsError(
-                        f"Operator '{token}' requires 2 operands but stack has {len(self.stack)}"
+                    msg = (
+                        f"Operator '{token}' requires 2 operands "
+                        f"but stack has {len(self.stack)}"
                     )
+                    raise InsufficientOperandsError(msg)
                 b = self.stack.pop()
                 a = self.stack.pop()
                 result = apply_operator(a, b, token)
@@ -80,9 +82,11 @@ class UPNCalculator:
                 raise InvalidTokenError(f"Unknown token: '{token}'")
 
         if len(self.stack) != 1:
-            raise InvalidExpressionError(
-                f"Invalid expression: stack must have exactly 1 element, but has {len(self.stack)}"
+            msg = (
+                f"Invalid expression: stack must have exactly 1 element, "
+                f"but has {len(self.stack)}"
             )
+            raise InvalidExpressionError(msg)
 
         return self.stack[0]
 
