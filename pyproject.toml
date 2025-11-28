@@ -1,7 +1,19 @@
 [project]
 name = "example"
 version = "0.1.0"
-description = "Add your description here"
+description = "UPN Calculator - Reverse Polish Notation Stack-based Calculator CLI"
 readme = "README.md"
 requires-python = ">=3.13.1"
 dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.1", "black>=23.0"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["upn_calculator*", "tests*"]
+
