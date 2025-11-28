@@ -2,7 +2,7 @@
 
 ## Metadata
 - **ID**: task-002
-- **Status**: pending
+- **Status**: in_progress
 - **Priority**: must
 - **Estimate**: 3 Story Points
 - **Labels**: [core, math, critical]
