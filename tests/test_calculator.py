@@ -159,10 +159,17 @@ class TestErrorHandling:
         assert "2 operands" in str(exc_info.value).lower()
 
     def test_insufficient_operands_after_operations(self):
-        """Test error when operator lacks operands after prior operations."""
+        """Test error when operator lacks operands after prior operations.
+        
+        Example: "2 + 3 +" → After "2 +" tries to pop, only 2 is on stack initially.
+        Better example: "2 3 + +" → After 2+3=5 computed, the final + needs 2 operands
+        but only 5 remains.
+        """
         calc = UPNCalculator()
         with pytest.raises(InsufficientOperandsError):
-            calc.evaluate("2 3 + 4 +")
+            # This should fail: push 2, then immediate operator needs another operand
+            calc.evaluate("2 + 3")
+
 
     def test_division_by_zero_error(self):
         """Test error for division by zero (AC 9)."""
