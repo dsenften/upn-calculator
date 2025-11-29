@@ -1,13 +1,35 @@
 [project]
-name = "example"
+name = "upn-calculator"
 version = "0.1.0"
 description = "UPN Calculator - Reverse Polish Notation Stack-based Calculator CLI"
 readme = "README.md"
-requires-python = ">=3.13.1"
+requires-python = ">=3.13"
+license = {text = "MIT"}
+authors = [
+    {name = "Daniel Senften", email = "daniel@senften.org"}
+]
+keywords = ["calculator", "rpn", "upn", "reverse-polish-notation", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Typing :: Typed",
+]
 dependencies = []
 
+[project.urls]
+Homepage = "https://github.com/dsenften/upn-calculator"
+Repository = "https://github.com/dsenften/upn-calculator.git"
+Issues = "https://github.com/dsenften/upn-calculator/issues"
+
 [project.optional-dependencies]
-dev = ["pytest>=7.0", "ruff>=0.1", "black>=23.0"]
+dev = ["pytest>=7.0", "ruff>=0.1"]
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
@@ -15,5 +37,16 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["upn_calculator*", "tests*"]
+include = ["upn_calculator*"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
 
