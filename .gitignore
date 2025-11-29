@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local Configuration Files
+.env
+.env.local
+.env.*.local
+.claude/settings.local.json
+.vscode/settings.json
