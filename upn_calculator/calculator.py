@@ -3,13 +3,13 @@
 from typing import List
 
 from .errors import (
+    EmptyStackError,
     InsufficientOperandsError,
     InvalidExpressionError,
     InvalidTokenError,
-    EmptyStackError,
 )
-from .parser import is_number, is_operator, tokenize
 from .operators import apply_operator
+from .parser import is_number, is_operator, tokenize
 
 
 class UPNCalculator:
