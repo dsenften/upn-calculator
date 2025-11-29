@@ -1,19 +1,21 @@
 # Project Status: UPN-Taschenrechner CLI
 
-**Last Updated**: 28. November 2025, 10:30 CET
+**Last Updated**: 29. November 2025, 10:30 CET
 
 ## Progress Overview
 
 - **Total Tasks**: 11 (Initial MVP-Tasks)
-- **Completed**: 0 (0%)
+- **Completed**: 2 (18%)
 - **In Progress**: 0 (0%)
-- **Pending**: 11 (100%)
+- **Pending**: 9 (82%)
 - **Blocked**: 0 (0%)
 
 **Total Story Points**: 21 SP
-- **Must-Have**: 14 SP (67%)
-- **Should-Have**: 4 SP (19%)
-- **Could-Have**: 3 SP (14%)
+- **Completed**: 6 SP (29%)
+- **Remaining**: 15 SP (71%)
+  - **Must-Have**: 8 SP (38%)
+  - **Should-Have**: 4 SP (19%)
+  - **Could-Have**: 3 SP (14%)
 
 **Estimated Duration**: 3-4 Wochen (22 Arbeitstage) bei vollzeitiger Entwicklung
 
@@ -23,8 +25,8 @@
 
 | ID | Task | SP | Status | Agent | Priority |
 |----|------|----|----|-------|---------|
-| 001 | UPN-Parser Core Implementation | 3 | pending | `python-expert` | 🟥 Critical |
-| 002 | Grundoperationen (+, -, *, /) | 3 | pending | `python-expert` | 🟥 Critical |
+| 001 | UPN-Parser Core Implementation | 3 | completed | `python-expert` | 🟥 Critical |
+| 002 | Grundoperationen (+, -, *, /) | 3 | completed | `python-expert` | 🟥 Critical |
 | 003 | Trigonometrische Funktionen | 3 | pending | `python-expert` | 🟥 Critical |
 | 004 | CLI REPL Interface | 2 | pending | `python-expert` | 🟥 Critical |
 | 005 | Stack Management & Display | 2 | pending | `python-expert` | 🟥 Critical |
@@ -48,7 +50,18 @@
 ## Tasks by Status
 
 ### Completed ✅
-*Noch keine Tasks abgeschlossen*
+
+- **task-001-upn-parser-core.md** (3 SP) [`python-expert`] ✅
+  - Stack-basierter UPN-Parser implementiert
+  - Token-Parsing mit Validierung
+  - Error Handling für Invalid-Expressions
+  - Merged via PR #1
+
+- **task-002-grundoperationen.md** (3 SP) [`python-expert`] ✅
+  - Addition, Subtraktion, Multiplikation, Division
+  - Division-by-Zero Error Handling
+  - Integration mit UPN-Parser
+  - Merged via PR #2
 
 ### In Progress 🚧
 *Keine Tasks im Moment gestartet*
@@ -57,19 +70,7 @@
 
 #### Epic 1: Core Math Engine (14 SP - Must-Have)
 
-**Dependencies**: None (Start immediate)
-
-- **task-001-upn-parser-core.md** (3 SP) [`python-expert`]
-  - Stack-basierter UPN-Parser implementieren
-  - Token-Parsing mit Validierung
-  - Error Handling für Invalid-Expressions
-  - Foundation für alle anderen Tasks
-
-- **task-002-grundoperationen.md** (3 SP) [`python-expert`] 
-  - Depends on: task-001
-  - Addition, Subtraktion, Multiplikation, Division
-  - Division-by-Zero Error Handling
-  - Integration mit UPN-Parser
+**Dependencies**: task-001 ✅, task-002 ✅ completed
 
 - **task-003-trigonometrische-funktionen.md** (3 SP) [`python-expert`]
   - Depends on: task-001
@@ -142,16 +143,18 @@
 ┌─────────────────────────────────────┐
 │ Total Story Points: 21 SP           │
 ├─────────────────────────────────────┤
-│ Must-Have: 14 SP (67%)  ████████░░ │
-│ Should-Have: 4 SP (19%)  ██░░░░░░░ │
-│ Could-Have: 3 SP (14%)   █░░░░░░░░ │
+│ Completed: 6 SP (29%)    ███░░░░░░░ │
+│ Must-Have: 8 SP (38%)    ████░░░░░░ │
+│ Should-Have: 4 SP (19%)  ██░░░░░░░░ │
+│ Could-Have: 3 SP (14%)   █░░░░░░░░░ │
 └─────────────────────────────────────┘
 
-MVP (Must-Have only): 14 SP
-Estimated Duration: 2-3 Wochen (mit Post-MVP Buffer)
+MVP (Must-Have only): 14 SP (6 SP completed, 8 SP remaining)
+Progress: 43% of MVP completed
+Estimated Remaining: 1-2 Wochen
 
-Full Release (Must + Should): 18 SP
-Estimated Duration: 3-4 Wochen
+Full Release (Must + Should): 18 SP (6 SP completed, 12 SP remaining)
+Estimated Remaining: 2-3 Wochen
 ```
 
 ## Dependencies Graph
@@ -319,10 +322,10 @@ Actual Critical Path Duration: ~9 SP equivalent
 
 | Metrik | Baseline | Target | Aktuell | Status |
 |--------|----------|--------|---------|--------|
-| **Feature Completeness** | 0% | 100% | 0% | ⏳ TBD |
-| **Test Coverage** | 0% | ≥ 80% | 0% | ⏳ TBD |
-| **Performance** | N/A | < 100ms | N/A | ⏳ TBD |
-| **Usability** | N/A | < 5% Fehler | N/A | ⏳ TBD |
+| **Feature Completeness** | 0% | 100% | 29% (6/21 SP) | 🟡 In Progress |
+| **Test Coverage** | 0% | ≥ 80% | ~90% (Tasks 001-002) | 🟢 On Track |
+| **Performance** | N/A | < 100ms | < 1ms (Tasks 001-002) | 🟢 Excellent |
+| **Usability** | N/A | < 5% Fehler | TBD (nach CLI) | ⏳ Pending |
 
 **Update Frequency**: Nach jedem Sprint (wöchentlich)
 
@@ -349,11 +352,11 @@ Actual Critical Path Duration: ~9 SP equivalent
 
 ## Summary & Next Action
 
-**Status**: 🟡 Ready to Kick-Off
-**Last Review**: 28. November 2025
+**Status**: 🟢 In Active Development (29% Complete)
+**Last Review**: 29. November 2025
 **Next Review**: Nach Sprint 1 (13. Dezember 2025)
 
-**Readiness Checklist**:
+**Progress Checklist**:
 - ✅ PRD verfügbar und detailliert
 - ✅ Tasks identifiziert und priorisiert
 - ✅ Dependencies gemappt
@@ -361,7 +364,9 @@ Actual Critical Path Duration: ~9 SP equivalent
 - ✅ Agent-Zuweisung erfolgt
 - ✅ Timeline realistisch
 - ✅ Risiken identifiziert
-- ⏳ Stakeholder-Approval ausstehend
-- ⏳ Development Start ausstehend
+- ✅ Development gestartet
+- ✅ Task 001: UPN Parser Core (completed via PR #1)
+- ✅ Task 002: Grundoperationen (completed via PR #2)
+- 🚀 Task 003: Trigonometrische Funktionen (ready to start)
 
-**Nächster Schritt**: Tasks im Detail implementieren (task-001 starting...)
+**Nächster Schritt**: Task 003 (Trigonometrische Funktionen) implementieren

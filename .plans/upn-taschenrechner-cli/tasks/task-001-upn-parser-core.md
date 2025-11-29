@@ -2,13 +2,13 @@
 
 ## Metadata
 - **ID**: task-001
-- **Status**: in_progress
+- **Status**: completed
 - **Priority**: must
 - **Estimate**: 3 Story Points
 - **Labels**: [core, parser, critical]
 - **Assignee**: `python-expert`
 - **Created**: 28. November 2025
-- **Updated**: 28. November 2025
+- **Updated**: 29. November 2025
 
 ## Description
 
