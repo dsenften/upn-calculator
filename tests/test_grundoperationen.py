@@ -1,6 +1,7 @@
 """Integration and acceptance tests for task-002: Grundoperationen."""
 
 import pytest
+
 from upn_calculator import (
     UPNCalculator,
     ZeroDivisionError,
@@ -202,6 +203,7 @@ class TestPerformance:
     def test_simple_operation_performance(self):
         """Test that simple operations are fast."""
         import time
+
         calc = UPNCalculator()
 
         start = time.time()

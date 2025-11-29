@@ -2,7 +2,6 @@
 
 from .errors import ZeroDivisionError
 
-
 OPERATORS = {"+", "-", "*", "/"}
 
 
